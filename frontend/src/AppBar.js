@@ -9,13 +9,14 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import './App.css';
 
-const pages = ['Resume', 'Projects', 'Past Life'];
+const pages = ['Resume', 'Projects', 'Past Life', 'Contact'];
 const font = "'Poppins', sans-serif";
 
 function ResponsiveAppBar() {
     const [resumePage, setResumePage] = React.useState(false);
     const [projectsPage, setProjectsPage] = React.useState(false);
     const [pastLifePage, setPastLifePage] = React.useState(false);
+    const [contactPage, setContactPage] = React.useState(false);
     const [landingPage, setLandingPage] = React.useState(null);
 
     const handleGoToPage = (event) => {
@@ -25,6 +26,8 @@ function ResponsiveAppBar() {
             setProjectsPage(true);
         } else if (event.currentTarget === 'Past Life') {
             setPastLifePage(true);
+        } else if (event.currentTarget === 'Contact') {
+            setContactPage(true);
         }
     }
     const handleLandingPage = (event) => {
