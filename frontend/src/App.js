@@ -1,22 +1,27 @@
 import './App.css';
 import * as React from 'react';
-// import {Route, BrowserRouter, Routes} from "react-router-dom";
+import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import LandingPage from "./LandingPage";
 import Resume from "./Resume";
 import AppBar from "./AppBar";
 import PortfolioContainer from "./PortfolioContainer";
+import Navbar from "./Pages/Home/NavBar"
+import Home from "./Pages/Home/Homescreen"
 
 function App() {
   return (
     <div className="App">
-        {/*<BrowserRouter>*/}
-        {/*    <Routes>*/}
-        {/*        <Route path="/" element={<AppBar />}></Route>*/}
-        {/*        <Route path="/" element={<LandingPage />}></Route>*/}
-        {/*        <Route path="/resume" element={<Resume />}></Route>*/}
-        {/*    </Routes>*/}
-        {/*</BrowserRouter>*/}
-        <PortfolioContainer />
+        <Router>
+            <div>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />}>
+                    </Route>
+                    <Route path="*" element={<div>404 Not Found</div>}>
+                    </Route>
+                </Routes>
+            </div>
+        </Router>
     </div>
   );
 }
